@@ -1,5 +1,4 @@
-# project
-Group5
+# Group 5
 Enabore, Reignier D.
 Dorado, Dharel U.
 Bautista, Irish S.
