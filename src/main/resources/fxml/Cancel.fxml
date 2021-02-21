@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="600.0" prefWidth="1000.0" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oopclass.breadapp.controllers.CancelController">
+   <left>
+      <VBox prefHeight="500.0" prefWidth="251.0" spacing="10.0" style="-fx-background-color: black;" styleClass="background" stylesheets="@../styles/Styles.css" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="0.0" prefWidth="0.0" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="20.0" top="30.0" />
+               </VBox.margin>
+            </Label>
+            <Pane prefHeight="90.0" prefWidth="241.0">
+               <VBox.margin>
+                  <Insets top="-80.0" />
+               </VBox.margin>
+               <children>
+                  <Button fx:id="back" alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="6.0" mnemonicParsing="false" onAction="#back" prefHeight="22.0" prefWidth="84.0" style="-fx-background-color: lightgray;" styleClass="btnGreen" text="BACK">
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" color="#6468b2" />
+                     </effect>
+                  </Button>
+                  <Button fx:id="backHome" alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="45.0" mnemonicParsing="false" onAction="#backHome" prefHeight="22.0" prefWidth="84.0" style="-fx-background-color: lightgray;" styleClass="btnGreen" text="HOME">
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" color="#6468b2" />
+                     </effect>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane prefHeight="213.0" prefWidth="241.0">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+               <children>
+                  <Label layoutX="34.0" layoutY="14.0" prefHeight="17.0" prefWidth="185.0" text="Customer ID" textAlignment="CENTER" textFill="WHITE">
+                     <padding>
+                        <Insets left="25.0" right="25.0" />
+                     </padding>
+                     <font>
+                        <Font name="Times New Roman" size="22.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="firstName" layoutX="28.0" layoutY="50.0" prefHeight="30.0" prefWidth="185.0" promptText="First Name">
+                     <padding>
+                        <Insets left="25.0" right="25.0" />
+                     </padding>
+                  </TextField>
+                  <TextField fx:id="lastName" layoutX="28.0" layoutY="93.0" prefHeight="31.0" prefWidth="185.0" promptText="Last Name">
+                     <padding>
+                        <Insets left="25.0" right="25.0" />
+                     </padding>
+                  </TextField>
+                  <TextField fx:id="productName" layoutX="28.0" layoutY="135.0" prefHeight="30.0" prefWidth="185.0" promptText="Product Name">
+                     <padding>
+                        <Insets left="25.0" right="25.0" />
+                     </padding>
+                  </TextField>
+                  <Label fx:id="cancelId" layoutX="179.0" layoutY="18.0" />
+                  <DatePicker fx:id="doc" layoutX="27.0" layoutY="178.0" prefHeight="28.0" prefWidth="186.0" promptText="Date of Cancelation">
+                     <padding>
+                        <Insets right="25.0" />
+                     </padding>
+                  </DatePicker>
+               </children>
+            </Pane>
+            <HBox prefHeight="52.0" prefWidth="241.0">
+               <VBox.margin>
+                  <Insets left="25.0" right="25.0" />
+               </VBox.margin>
+               <children>
+                  <Label prefHeight="2.0" prefWidth="228.0" text=" Do you want to cancel your order?" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="37.0" prefWidth="232.0">
+               <VBox.margin>
+                  <Insets left="25.0" right="25.0" top="-40.0" />
+               </VBox.margin>
+               <children>
+                  <RadioButton fx:id="rbYes" mnemonicParsing="false" prefHeight="24.0" prefWidth="68.0" selected="true" text="Yes" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="cancel" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="rbNo" mnemonicParsing="false" prefHeight="24.0" prefWidth="54.0" text="No" textFill="WHITE" toggleGroup="$cancel">
+                     <HBox.margin>
+                        <Insets left="50.0" right="25.0" />
+                     </HBox.margin>
+                  </RadioButton>
+               </children>
+            </HBox>
+            <HBox prefHeight="45.0" prefWidth="191.0">
+               <children>
+                  <Button fx:id="reset" mnemonicParsing="false" onAction="#reset" prefHeight="43.0" prefWidth="61.0" style="-fx-background-color: lightgray;" text="Reset" />
+                  <Button fx:id="saveCancel" mnemonicParsing="false" onAction="#saveCancel" prefHeight="42.0" prefWidth="97.0" text="Save">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="25.0" right="25.0" />
+               </VBox.margin>
+            </HBox>
+            <Button fx:id="deleteCancel" mnemonicParsing="false" onAction="#deleteCancel" prefHeight="25.0" prefWidth="238.0" style="-fx-background-color: lightgray;" text="Delete">
+               <VBox.margin>
+                  <Insets left="25.0" right="25.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <BorderPane.margin>
+            <Insets bottom="15.0" left="15.0" top="15.0" />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+   <center>
+      <VBox alignment="TOP_RIGHT" prefHeight="571.0" prefWidth="692.0" style="-fx-background-color: gray;" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="TOP_RIGHT" prefHeight="41.0" prefWidth="640.0" />
+            <TableView fx:id="cancelTable" prefHeight="495.0" prefWidth="699.0" style="-fx-background-color: lightgray;" tableMenuButtonVisible="true">
+              <columns>
+                <TableColumn fx:id="colCancelId" maxWidth="1000.0" prefWidth="75.0" text="ID" />
+                  <TableColumn fx:id="colFirstName" maxWidth="4000.0" prefWidth="75.0" text="FirstName" />
+                  <TableColumn fx:id="colLastName" maxWidth="4000.0" prefWidth="75.0" text="LastName" />
+                  <TableColumn fx:id="colProductName" maxWidth="4000.0" prefWidth="60.0" text="Product Name" />
+                  <TableColumn fx:id="colDOC" maxWidth="4500.0" prefWidth="75.0" text="Date of Cancelation" />
+                  <TableColumn fx:id="colCancelOrder" maxWidth="4000.0" prefWidth="75.0" text="Cancel Order" />
+                  <TableColumn fx:id="colEdit" maxWidth="3500.0" prefWidth="75.0" text="Edit" />
+              </columns>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="-10.0" />
+               </VBox.margin>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+
+            </TableView>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="15.0" right="15.0" top="15.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+</BorderPane>
